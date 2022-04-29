@@ -50,7 +50,7 @@ export default class HolidayInput extends React.Component {
                 <ul>
                     {this.state.holidays.map((day, index) => 
                             
-                           <li key={index}>{day}</li>    
+                           <li key={index}>{day}<button>click to add holiday!</button></li>    
                     )
                     }
                 </ul>
