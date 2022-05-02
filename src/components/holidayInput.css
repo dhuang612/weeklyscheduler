@@ -29,6 +29,10 @@
     margin-inline-end: 11px;
 }
 
+.holidayDateInput {
+    margin-right:8px;
+}
+
 #holidayHeaderContainer {
     margin: 20px;
 }

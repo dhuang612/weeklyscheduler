@@ -46,7 +46,8 @@ export default class HolidayInput extends React.Component {
             <div id="holidayHeaderContainer">
             
                 <div id="dateInputContainer">
-                    <input 
+                    <input
+                    className="holidayDateInput" 
                     type="date"
                     onChange={this.onChange}
                     />
@@ -61,7 +62,7 @@ export default class HolidayInput extends React.Component {
                             
                         <p className="holidayDate" key={index}>{day}
                             <button onClick={() => this.handleRemoveClick(index)}>
-                               x
+                            <i className="fal fa-times"></i>
                             </button>
                         </p>    
                     )
