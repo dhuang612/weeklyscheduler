@@ -1,4 +1,5 @@
 import React from 'react';
+import './holidayInput.css';
 
 export default class HolidayInput extends React.Component {
     constructor(props) {
@@ -54,13 +55,18 @@ export default class HolidayInput extends React.Component {
                     </button>
                 </div>
                 <div id="dateShowcaseContainer">
-                <ul>
+                    <h3 className="heading">Holidays</h3>
+                <div id="dateShowcaseFlexbox">
                     {this.state.holidays.map((day, index) => 
                             
-                           <li key={index}>{day}<button onClick={() => this.handleRemoveClick(index)}>remove</button></li>    
+                        <p className="holidayDate" key={index}>{day}
+                            <button onClick={() => this.handleRemoveClick(index)}>
+                               x
+                            </button>
+                        </p>    
                     )
                     }
-                </ul>
+                </div>
                 </div>
             </div>
         

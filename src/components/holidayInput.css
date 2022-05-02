@@ -1,0 +1,34 @@
+#dateShowcaseContainer {
+    min-height: 75px;
+    margin-block-start:20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#dateShowcaseFlexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.heading {
+    margin: 0;
+    color: black;
+    background-color: white;
+    width: fit-content;
+    position: relative;
+    bottom: 23px;
+    padding: 3px;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+.holidayDate {
+    margin-inline-start: 11px;
+    margin-inline-end: 11px;
+}
+
+#holidayHeaderContainer {
+    margin: 20px;
+}
