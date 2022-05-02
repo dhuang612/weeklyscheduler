@@ -8,17 +8,24 @@ export default class HolidayInput extends React.Component {
             currentHoliday: ""
         }
 
-        this.handleClick = this.handleClick.bind(this);
+        this.handleAddClick = this.handleAddClick.bind(this);
+        this.handleRemoveClick = this.handleRemoveClick.bind(this)
         this.onChange = this.onChange.bind(this);
     }
 
-    handleClick () {
+    handleRemoveClick (index) {
+        let holidayArray = [...this.state.holidays]
+            holidayArray.splice(index, 1);
+            this.setState({holidays: holidayArray})
+    }
+
+    handleAddClick () {
         let holidayArray = [...this.state.holidays]
         let todayDate = new Date
         let inputDate = this.state.currentHoliday
         let dateHasPassed = todayDate >= new Date(inputDate.concat(" 23:59:59"))
 
-        if (!holidayArray.includes(inputDate) && !dateHasPassed ){
+        if (!holidayArray.includes(inputDate) && !dateHasPassed  && inputDate) {
             holidayArray.push(inputDate)
             this.setState({
                 holidays: holidayArray
@@ -42,7 +49,7 @@ export default class HolidayInput extends React.Component {
                     type="date"
                     onChange={this.onChange}
                     />
-                    <button onClick={this.handleClick}>
+                    <button onClick={this.handleAddClick}>
                         add
                     </button>
                 </div>
@@ -50,7 +57,7 @@ export default class HolidayInput extends React.Component {
                 <ul>
                     {this.state.holidays.map((day, index) => 
                             
-                           <li key={index}>{day}<button>click to add holiday!</button></li>    
+                           <li key={index}>{day}<button onClick={() => this.handleRemoveClick(index)}>remove</button></li>    
                     )
                     }
                 </ul>
