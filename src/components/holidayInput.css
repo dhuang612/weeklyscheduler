@@ -1,9 +1,42 @@
+body, button, input {
+    font-family: 'Montserrat', sans-serif;
+}
+
+#addHolidayBtn {
+    border: none;
+    height: 35px;
+    width: 60px;
+    border-radius: 26px;
+    color:white;
+    background-color: #085394 ;
+    font-weight: 600;
+}
+
+.closeBtnContainer {
+    margin-inline-start: 5px;
+    font-size: 27px;
+    color:rgb(208, 9, 9);
+}
+
+.closeBtnContainer:hover {
+    cursor: pointer;
+    color:rgb(208, 9, 9, 0.8);
+}
+
+#dateInputContainer {
+    display: flex;
+    align-items: center;
+}
+
 #dateShowcaseContainer {
     min-height: 75px;
     margin-block-start:20px;
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
+    width: max-content;
+    min-width: 10vw;
+    max-width: 85vw;
 }
 
 #dateShowcaseFlexbox {
@@ -17,22 +50,36 @@
     color: black;
     background-color: white;
     width: fit-content;
-    position: relative;
-    bottom: 23px;
+    position: absolute;
+    top: 61px;
     padding: 3px;
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
 .holidayDate {
+    display: flex;
+    align-items: center;
     margin-inline-start: 11px;
     margin-inline-end: 11px;
 }
 
 .holidayDateInput {
+    border: 2px solid black;
+    border-radius: 26px;
+    font-size: 20px;
+    padding: 3px;
+    padding-inline-start: 7px;
+    padding-inline-end: 7px;
     margin-right:8px;
 }
 
 #holidayHeaderContainer {
     margin: 20px;
+}
+
+.holidayLabel {
+    font-size: 22px;
+    font-weight: 400;
 }

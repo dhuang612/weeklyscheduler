@@ -44,30 +44,30 @@ export default class HolidayInput extends React.Component {
     render() {
         return (
             <div id="holidayHeaderContainer">
-            
                 <div id="dateInputContainer">
                     <input
                     className="holidayDateInput" 
                     type="date"
                     onChange={this.onChange}
                     />
-                    <button onClick={this.handleAddClick}>
-                        add
+                    <button id="addHolidayBtn" onClick={this.handleAddClick}>
+                        Add
                     </button>
                 </div>
                 <div id="dateShowcaseContainer">
-                    <h3 className="heading">Holidays</h3>
-                <div id="dateShowcaseFlexbox">
-                    {this.state.holidays.map((day, index) => 
-                            
-                        <p className="holidayDate" key={index}>{day}
-                            <button onClick={() => this.handleRemoveClick(index)}>
-                            <i className="fal fa-times"></i>
-                            </button>
-                        </p>    
-                    )
-                    }
-                </div>
+                    <div id="dateShowcaseFlexbox">
+                        <h3 className="heading">Holidays</h3>
+                        {this.state.holidays.map((day, index) => 
+                                
+                            <div className="holidayDate" key={index}>
+                                <p className="holidayLabel">{day}</p>
+                                <div className="closeBtnContainer" onClick={() => this.handleRemoveClick(index)}>
+                                    <i className="fa fa-times-square"></i>
+                                </div>
+                            </div>    
+                        )
+                        }
+                    </div>
                 </div>
             </div>
         
